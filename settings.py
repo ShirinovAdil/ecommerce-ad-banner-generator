@@ -1,0 +1,37 @@
+from collections import namedtuple
+import os
+
+
+# Folder settings
+DEFAULT_ASSET_DIR = 'assets'
+DEFAULT_RESULT_DIR = 'results'
+DEFAULT_OUTPUT_FILE = 'out.png'
+#DEFAULT_BG = os.path.join(DEFAULT_ASSET_DIR, "bg.jpg") # Main picture
+DEFAULT_BG = "bg.jpg"
+
+# Canvas settings
+DEFAULT_WIDTH = 700
+DEFAULT_HEIGHT = 250
+DEFAULT_CANVAS_SIZE = (DEFAULT_WIDTH, DEFAULT_HEIGHT)
+RESIZE_PERCENTAGE = 0.8
+DEFAULT_TOP_MARGIN = int(((1 - 0.8) * DEFAULT_HEIGHT))
+
+LEFT_IMAGE_SIZE = namedtuple('LeftImageSize', ['x', 'y'])
+LEFT_IMAGE_SIZE = LEFT_IMAGE_SIZE(150, 150)
+LEFT_IMAGE_OFFSET = namedtuple('LeftImageOffset', ['x', 'y'])
+LEFT_IMAGE_OFFSET = LEFT_IMAGE_OFFSET(15, (DEFAULT_HEIGHT-LEFT_IMAGE_SIZE.y)//2)
+RIGHT_IMAGE_SIZE = namedtuple('RightImageSize', ['x', 'y'])
+RIGHT_IMAGE_SIZE = RIGHT_IMAGE_SIZE(180, 180)
+RIGHT_IMAGE_OFFSET = namedtuple('LeftImageOffset', ['x', 'y'])
+RIGHT_IMAGE_OFFSET = RIGHT_IMAGE_OFFSET(DEFAULT_WIDTH - RIGHT_IMAGE_SIZE.x - 15, (DEFAULT_HEIGHT-RIGHT_IMAGE_SIZE.y)//2)
+
+# Font settings
+WHITE, BLACK = (255, 255, 255), (0, 0, 0)
+WHITE_TRANSPARENT_OVERLAY = (255, 255, 255, 178)
+TEXT_FONT_TYPE = os.path.join(DEFAULT_ASSET_DIR, 'SourceSansPro-Regular.otf')
+TEXT_PADDING_HOR = 10
+Y_TEXT_START = 20
+
+# adjust CHARS_PER_LINE if you change TEXT_SIZE
+TEXT_SIZE = 24
+CHARS_PER_LINE = 30
